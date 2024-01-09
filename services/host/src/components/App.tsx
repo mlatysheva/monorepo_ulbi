@@ -1,25 +1,18 @@
-import React, { useState } from 'react';
+import { adminRoutes } from '@packages/shared/src/routes/admin';
+import { shopRoutes } from '@packages/shared/src/routes/shop';
 import { Link, Outlet } from 'react-router-dom';
 
 
 export const App = () => {
-  const [count, setCount] = useState(0);
-
-  const increment = () => setCount(count + 1);
 
   return (
     <div data-testid={'App.DataTestId'}>
-      <Link to="/about">About</Link>
+      <Link to={ adminRoutes.about }>About</Link>
       <br />
-      <Link to="/shop">Shop</Link>
+      <Link to={ shopRoutes.main }>Shop</Link>
       <br />
 
-      <h1>{count}</h1>
-      <button 
-        onClick={increment}
-      >
-        Increment
-      </button>
+      <h1>HOST</h1>
       <Outlet />
     </div>
   )
